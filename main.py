@@ -1,3 +1,9 @@
+def on_on_overlap(sprite, otherSprite):
+    comida.set_position(randint(0, scene.screen_width()),
+        randint(0, scene.screen_height()))
+sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_on_overlap)
+
+comida: Sprite = None
 scene.set_background_color(7)
 heroe = sprites.create(img("""
         . . . . . f f f f . . . . . 
@@ -54,4 +60,3 @@ comida = sprites.create(img("""
             44ee...4e.......................
     """),
     SpriteKind.food)
-heroe.set_position(100, 0)
