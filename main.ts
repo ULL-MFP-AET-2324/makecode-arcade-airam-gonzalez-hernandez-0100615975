@@ -1,5 +1,7 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
     comida.setPosition(randint(5, scene.screenWidth() - 10), randint(5, scene.screenHeight() - 10))
+    info.startCountdown(3)
 })
 let comida: Sprite = null
 scene.setBackgroundColor(7)
@@ -56,3 +58,4 @@ comida = sprites.create(img`
     41554eede.......................
     44ee...4e.......................
     `, SpriteKind.Food)
+info.setScore(0)
